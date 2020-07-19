@@ -1,19 +1,18 @@
 #include <stdio.h>
-#include "../include/SinglyLinkedList.h"
+#include "../include/DoublyLinkedList.h"
 
 void print(int a)
 {
 	printf("%d ",a);
 }
 int main(void) {
-  SinglyLinkedList list;
-  SLL_Init(&list);
-  SLL_Append(&list,100);
-  SLL_Append(&list,200);
-  SLL_Append(&list,300);
-  printf("This list contains\n[");
-  SLL_ForEach(&list,print);
-  printf("]\n");
-  SLL_Dispose(&list);
+  DoublyLinkedList list;
+  DLL_Init(&list);
+  DLL_AddAtFront(&list,100);
+  DLL_AddAtFront(&list,200);
+  DLL_AddAtFront(&list,300);
+  DLL_Dispose(&list);
+  DLL_ForEach(&list,print);
   return 0;
 }
+
