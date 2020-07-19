@@ -34,6 +34,17 @@ void DLL_AddAtFront( DoublyLinkedList* list, int element){
 	list->head = temp;
 }
 
+void DLL_Dispose(DoublyLinkedList* list){
+	if(!list) return;
+	while(list->head){
+		DLL_Node *tmp = list->head;
+		list->head = list->head->next;
+		free(tmp);
+	}
+	list->tail = NULL;
+	list->length = 0;
+}
+
 void DLL_ForEach(const DoublyLinkedList *list,void (*func) (int)){
 	if(!func || !list) return;
   	for(DLL_Node *i = list->head; i; i = i->next){
