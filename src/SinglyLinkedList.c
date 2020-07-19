@@ -1,5 +1,5 @@
 #include <stdlib.h>
-#include "SinglyLinkedList.h"
+#include "../include/SinglyLinkedList.h"
 
 SLL_Node* SLL_CreateNode(int element){
   SLL_Node* sll = malloc(sizeof(SLL_Node));
