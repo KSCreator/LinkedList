@@ -1,7 +1,6 @@
 #to make 
 CC := gcc
 CFLAGS := -Wall -o3 -std=c11
-BIN = bin
 TARGET = main
 OBJECTS := main.o SinglyLinkedList.o DoublyLinkedList.o
 
