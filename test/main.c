@@ -1,5 +1,5 @@
 #include <stdio.h>
-#include "SinglyLinkedList.h"
+#include "../include/SinglyLinkedList.h"
 
 void print(int a)
 {
