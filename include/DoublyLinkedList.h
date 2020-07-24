@@ -1,6 +1,5 @@
 #ifndef DOUBLY_LINKED_LIST
 #define DOUBLY_LINKED_LIST
-#include <stddef.h>
 
 struct DLL_Node{
   int element;

@@ -21,10 +21,10 @@ void DLL_Init( DoublyLinkedList* list){
 }
 
 void DLL_AddAtFront( DoublyLinkedList* list, int element){
+	if(!list) return;
 	DLL_Node *temp = DLL_CreateNode(element);
-	temp->prev = NULL;
+	list->length++;
 	if(!list->head){
-		temp->next = NULL;
 		list->head = temp;
 		list->tail = temp;
 		return;
@@ -32,6 +32,19 @@ void DLL_AddAtFront( DoublyLinkedList* list, int element){
 	temp->next = list->head;
 	list->head->prev = temp;
 	list->head = temp;
+}
+
+void DLL_Append(DoublyLinkedList* list, int element){
+	if(!list) return;
+	DLL_Node *temp = DLL_CreateNode(element);
+	list->length++;
+	if(!list->head){
+		list->head = list->tail = temp;
+		return;
+	}
+	list->tail->next = temp;
+	temp->prev = list->tail;
+	list->tail = temp;
 }
 
 void DLL_Dispose(DoublyLinkedList* list){
