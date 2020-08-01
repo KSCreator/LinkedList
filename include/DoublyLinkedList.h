@@ -41,4 +41,6 @@ void DLL_Dispose(DoublyLinkedList*);
 void DLL_ForEach(const DoublyLinkedList *,void (*) (int));
 //
 void DLL_ForEachRev(const DoublyLinkedList *,void (*) (int));
+//
+DLL_Node* DLL_Search(const DoublyLinkedList * const, int);
 #endif  //DOUBLY_LINKED_LIST

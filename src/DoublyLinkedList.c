@@ -71,3 +71,20 @@ void DLL_ForEachRev(const DoublyLinkedList *list,void (*func) (int)){
     	func(i->element);
   	}
 }
+
+DLL_Node* DLL_Search(const DoublyLinkedList * const list, int key){
+	if(!list || !list->head)
+		return NULL;
+	DLL_Node *head = list->head;
+	DLL_Node *tail = list->tail;
+
+	do{
+		if(head->element == key)
+			return head;
+		else if(tail->element == key)
+			return tail;
+		head = head->next;
+		tail = tail->prev;
+	}while(head != tail);
+	return NULL;
+}

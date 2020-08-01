@@ -36,8 +36,9 @@ void SLL_RemoveAfter( SinglyLinkedList*, int );
 //not implemented yet
 void SLL_RemoveBefore( SinglyLinkedList*, int );
 //
-void SLL_Dispose(SinglyLinkedList*);
+void SLL_Dispose( SinglyLinkedList* );
 //
-void SLL_ForEach(const SinglyLinkedList *list,void (*) (int));
-
+void SLL_ForEach( const SinglyLinkedList *, void (*) (int) );
+//
+SLL_Node* SLL_Search( const SinglyLinkedList * const , int );
 #endif    //SINGLY_LINKED_LIST

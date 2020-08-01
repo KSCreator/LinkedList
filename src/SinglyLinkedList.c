@@ -138,3 +138,12 @@ void SLL_ForEach(const SinglyLinkedList *list,void (*func)(int))
     func(i->element);
   }
 }
+
+SLL_Node* SLL_Search(const SinglyLinkedList *const list, int key){
+	if(!list || !list->head)
+		return NULL;
+	SLL_Node *p;
+	while(p && p->element != key)
+		p = p->next;
+	return p;
+}
