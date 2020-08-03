@@ -142,7 +142,7 @@ void SLL_ForEach(const SinglyLinkedList *list,void (*func)(int))
 SLL_Node* SLL_Search(const SinglyLinkedList *const list, int key){
 	if(!list || !list->head)
 		return NULL;
-	SLL_Node *p;
+	SLL_Node *p = list->head;
 	while(p && p->element != key)
 		p = p->next;
 	return p;

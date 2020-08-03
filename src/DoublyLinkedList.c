@@ -77,14 +77,16 @@ DLL_Node* DLL_Search(const DoublyLinkedList * const list, int key){
 		return NULL;
 	DLL_Node *head = list->head;
 	DLL_Node *tail = list->tail;
-
-	do{
+	
+	if(head->element == key) return head;
+	else if(tail->element == key) return tail;
+	while(head != tail){
+	    head = head->next;
+		tail = tail->prev;
 		if(head->element == key)
 			return head;
 		else if(tail->element == key)
 			return tail;
-		head = head->next;
-		tail = tail->prev;
-	}while(head != tail);
+	};
 	return NULL;
 }
