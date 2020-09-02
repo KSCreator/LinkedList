@@ -47,6 +47,27 @@ void DLL_Append(DoublyLinkedList* list, int element){
 	list->tail = temp;
 }
 
+
+void DLL_InsertAfter(DoublyLinkedList *list, int key, int element){
+	if(!list || !list->head)
+		return;
+	DLL_Node* p = list->head;
+	while(p && p->element != key){
+		p = p->next;
+	}
+	if(!p) return;
+	if(p == list->tail){
+		DLL_Append(list,element);
+		return;
+	}
+	DLL_Node *tmp = DLL_CreateNode(element);
+	tmp->next = p->next;
+	p->next->prev = tmp;
+	p->next = tmp;
+	tmp->prev = p;
+	++list->length;
+}
+
 void DLL_Dispose(DoublyLinkedList* list){
 	if(!list) return;
 	while(list->head){
@@ -90,3 +111,7 @@ DLL_Node* DLL_Search(const DoublyLinkedList * const list, int key){
 	};
 	return NULL;
 }
+
+
+
+

@@ -14,9 +14,9 @@ int main(void) {
   DLL_Append(&list,30);
   DLL_Append(&list,40);
   DLL_Append(&list,50);
+	DLL_InsertAfter(&list,10,100);
   DLL_ForEach(&list,print);
-  DLL_Node* adr = DLL_Search(&list,30);
-  printf("adr = %p",adr);
+  printf("length = %zu\n",list.length);
   
   DLL_Dispose(&list);
   return 0;
